@@ -18,6 +18,12 @@ Hệ thống Quản lý Nhân viên được thiết kế để đơn giản hó
 - **Đánh giá Hiệu suất**: Đánh giá hiệu suất nhân viên và duy trì hồ sơ
 - **Xác thực Người dùng**: Hệ thống đăng nhập an toàn với kiểm soát truy cập dựa trên vai trò
 
+## Demo
+![image](https://github.com/user-attachments/assets/9235aaee-111b-4e5a-829f-77bf5b117046)
+
+![image](https://github.com/user-attachments/assets/73b61fb3-f25f-4fb8-b3dd-a7e3bdb5649f)
+
+
 ## Lưu Ý:
 - Chạy file setup_user.php đầu tiên để khởi tạo admin user
 
