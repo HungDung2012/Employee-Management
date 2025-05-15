@@ -1,83 +1,96 @@
-# Employee Management System
+# Hệ thống Quản lý Nhân viên
 
-![Employee Management System](images/avatar.png)
+Một giải pháp toàn diện trên nền web để quản lý dữ liệu nhân viên, tuyển dụng, chấm công, hợp đồng, lương, và đánh giá hiệu suất trong tổ chức.
 
-## 📋 Overview
+## Tổng quan
 
-A comprehensive employee management system designed for corporate HR departments. This web-based application helps organizations manage their workforce efficiently with modules for recruitment, employee records, contracts, departments, attendance tracking, salary management, and performance assessments.
+Hệ thống Quản lý Nhân viên được thiết kế để đơn giản hóa các quy trình nhân sự, giúp dễ dàng theo dõi thông tin nhân viên, giám sát hiệu suất, và quản lý các nhiệm vụ hành chính. Hệ thống được xây dựng bằng PHP và MySQL, cung cấp giao diện thân thiện với người dùng cho nhân viên HR và quản lý.
 
-## ✨ Features
+## Tính năng
 
-- **Dashboard**: Visualize employee statistics and department information
-- **Recruitment**: Manage job postings and candidate applications
-- **Employee Management**: Store and update comprehensive employee information
-- **Contract Management**: Track employment contracts and terms
-- **Department Organization**: Manage department structure and leadership
-- **Attendance Tracking**: Record and monitor employee attendance
-- **Salary Management**: Calculate and manage salary and bonus payments
-- **Performance Assessment**: Conduct and record employee evaluations
+- **Bảng điều khiển**: Tổng quan trực quan về thống kê công ty và các chỉ số quan trọng
+- **Quản lý Nhân viên**: Thêm, xem, chỉnh sửa, và xóa hồ sơ nhân viên
+- **Quản lý Phòng ban**: Tổ chức nhân viên theo phòng ban
+- **Tuyển dụng**: Theo dõi ứng viên và tiến trình tuyển dụng
+- **Hợp đồng**: Quản lý hợp đồng nhân viên và gia hạn
+- **Quản lý Lương**: Tính toán và theo dõi lương, thưởng, và khấu trừ
+- **Theo dõi Chấm công**: Ghi lại chấm công nhân viên và giờ làm việc
+- **Đánh giá Hiệu suất**: Đánh giá hiệu suất nhân viên và duy trì hồ sơ
+- **Xác thực Người dùng**: Hệ thống đăng nhập an toàn với kiểm soát truy cập dựa trên vai trò
 
-## 🛠️ Technologies
+## Lưu Ý:
+- Chạy file setup_user.php đầu tiên để khởi tạo admin user
 
-- **Backend**: PHP, MySQL
-- **Frontend**: HTML, CSS, JavaScript
-- **Visualization**: Chart.js
-- **Icons**: Font Awesome
+## Công nghệ sử dụng
 
-## 💻 Installation
+- **Frontend**: HTML, CSS, JavaScript, Chart.js (cho trực quan hóa dữ liệu)
+- **Backend**: PHP
+- **Cơ sở dữ liệu**: MySQL
 
-1. Clone the repository
-   ```bash
-   git clone https://github.com/yourusername/employee-management.git
-   ```
+## Bắt đầu
 
-2. Create a MySQL database and import the schema
-   ```bash
-   mysql -u username -p database_name < database.sql
-   ```
+### Yêu cầu
 
-3. Configure the database connection in `includes/db_connect.php`
-   ```php
-   $host = 'localhost';
-   $dbname = 'CompanyManagement';
-   $username = 'your_username';
-   $password = 'your_password';
-   ```
+- PHP 7.0 trở lên
+- MySQL 5.7 trở lên
+- Máy chủ web (Apache/Nginx)
 
-4. Deploy the application to your web server
+### Cài đặt
 
-## 🚀 Usage
+1. Sao chép kho lưu trữ vào thư mục máy chủ web của bạn
+2. Nhập tệp `database.sql` để tạo cấu trúc cơ sở dữ liệu và dữ liệu mẫu
+3. Cấu hình kết nối cơ sở dữ liệu trong `includes/db_connect.php`
+4. Truy cập hệ thống thông qua trình duyệt web
 
-1. Access the application through your web browser
-2. Log in using your credentials (default admin: username `admin`, password `admin`)
-3. Navigate through the sidebar to access different modules
+### Đăng nhập mặc định
 
-## 🔒 Security
+- **Tên đăng nhập**: admin
+- **Mật khẩu**: admin123
 
-- Password hashing for user authentication
-- Session-based authentication
-- Input validation and sanitization
+## Cấu trúc Hệ thống
 
-## 🌐 Languages
+```
+Employee-Management/
+├── index.php             # Điểm vào chính của ứng dụng
+├── homepage.php          # Trang chủ công khai
+├── login.php             # Xác thực người dùng
+├── logout.php            # Kết thúc phiên
+├── setup_user.php        # Thiết lập người dùng ban đầu
+├── database.sql          # Cấu trúc cơ sở dữ liệu và dữ liệu mẫu
+├── database_updates.sql  # Cập nhật cơ sở dữ liệu
+├── pages/                # Các trang ứng dụng chính
+│   ├── dashboard.php     # Bảng điều khiển tổng quan
+│   ├── employees.php     # Quản lý nhân viên
+│   ├── departments.php   # Quản lý phòng ban
+│   ├── recruitment.php   # Theo dõi tuyển dụng
+│   ├── contracts.php     # Quản lý hợp đồng
+│   ├── salary.php        # Quản lý lương
+│   ├── attendance.php    # Theo dõi chấm công
+│   └── assessment.php    # Đánh giá hiệu suất
+├── includes/             # Các thành phần và tiện ích dùng chung
+├── css/                  # Tệp định dạng
+├── ajax/                 # Xử lý yêu cầu AJAX
+└── images/               # Hình ảnh và tài sản hệ thống
+```
 
-- English
-- Vietnamese (Tiếng Việt)
+## Cấu trúc Cơ sở dữ liệu
 
-## 📊 Database Structure
+Hệ thống bao gồm một số bảng liên kết:
+- Users - Xác thực hệ thống
+- Employee - Thông tin nhân viên cốt lõi
+- Department - Cấu trúc tổ chức
+- Recruitment - Theo dõi quy trình tuyển dụng
+- Attendance/AttendanceDetail - Theo dõi giờ làm việc
+- Assessment - Hồ sơ đánh giá hiệu suất
 
-The system uses a relational database with tables for:
-- Users
-- Employees
-- Departments
-- Contracts
-- Attendance records
-- Salary information
-- Performance assessments
+## Ngôn ngữ
 
-## 👥 Contributors
+Giao diện hệ thống chủ yếu bằng tiếng Việt.
 
-- DCH Management Team
+## Lưu ý về Bảo mật
 
-## 📝 License
+- Thông tin đăng nhập quản trị viên mặc định nên được thay đổi ngay sau khi cài đặt
+- Mật khẩu người dùng được lưu trữ an toàn
+- Kiểm soát truy cập dựa trên vai trò giới hạn hành động của người dùng dựa trên quyền hạn
 
-This project is proprietary software. Unauthorized copying, modification, distribution, or use is strictly prohibited.
+
