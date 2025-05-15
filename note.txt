@@ -1,0 +1,2 @@
+Mở trình duyệt web và truy cập URL: `http://localhost/employe/setup_users.php`
+Tệp này sẽ tự động tạo bảng Users và tài khoản admin mặc định
