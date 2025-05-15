@@ -1,68 +1,83 @@
-Hệ thống Quản lý Nhân viên
-Một giải pháp toàn diện trên nền web để quản lý dữ liệu nhân viên, tuyển dụng, chấm công, hợp đồng, lương, và đánh giá hiệu suất trong tổ chức.
-Tổng quan
-Hệ thống Quản lý Nhân viên được thiết kế để đơn giản hóa các quy trình nhân sự, giúp dễ dàng theo dõi thông tin nhân viên, giám sát hiệu suất, và quản lý các nhiệm vụ hành chính. Hệ thống được xây dựng bằng PHP và MySQL, cung cấp giao diện thân thiện với người dùng cho nhân viên HR và quản lý.
-Tính năng
-Bảng điều khiển: Tổng quan trực quan về thống kê công ty và các chỉ số quan trọng
-Quản lý Nhân viên: Thêm, xem, chỉnh sửa, và xóa hồ sơ nhân viên
-Quản lý Phòng ban: Tổ chức nhân viên theo phòng ban
-Tuyển dụng: Theo dõi ứng viên và tiến trình tuyển dụng
-Hợp đồng: Quản lý hợp đồng nhân viên và gia hạn
-Quản lý Lương: Tính toán và theo dõi lương, thưởng, và khấu trừ
-Theo dõi Chấm công: Ghi lại chấm công nhân viên và giờ làm việc
-Đánh giá Hiệu suất: Đánh giá hiệu suất nhân viên và duy trì hồ sơ
-Xác thực Người dùng: Hệ thống đăng nhập an toàn với kiểm soát truy cập dựa trên vai trò
-Công nghệ sử dụng
-Frontend: HTML, CSS, JavaScript, Chart.js (cho trực quan hóa dữ liệu)
-Backend: PHP
-Cơ sở dữ liệu: MySQL
-Bắt đầu
-Yêu cầu
-PHP 7.0 trở lên
-MySQL 5.7 trở lên
-Máy chủ web (Apache/Nginx)
-Cài đặt
-Sao chép kho lưu trữ vào thư mục máy chủ web của bạn
-Nhập tệp database.sql để tạo cấu trúc cơ sở dữ liệu và dữ liệu mẫu
-Cấu hình kết nối cơ sở dữ liệu trong includes/db_connect.php
-Truy cập hệ thống thông qua trình duyệt web
-Đăng nhập mặc định
-Tên đăng nhập: admin
-Mật khẩu: admin123
-Cấu trúc Hệ thống
-Employee-Management/
-├── index.php             # Điểm vào chính của ứng dụng
-├── homepage.php          # Trang chủ công khai
-├── login.php             # Xác thực người dùng
-├── logout.php            # Kết thúc phiên
-├── setup_user.php        # Thiết lập người dùng ban đầu
-├── database.sql          # Cấu trúc cơ sở dữ liệu và dữ liệu mẫu
-├── database_updates.sql  # Cập nhật cơ sở dữ liệu
-├── pages/                # Các trang ứng dụng chính
-│   ├── dashboard.php     # Bảng điều khiển tổng quan
-│   ├── employees.php     # Quản lý nhân viên
-│   ├── departments.php   # Quản lý phòng ban
-│   ├── recruitment.php   # Theo dõi tuyển dụng
-│   ├── contracts.php     # Quản lý hợp đồng
-│   ├── salary.php        # Quản lý lương
-│   ├── attendance.php    # Theo dõi chấm công
-│   └── assessment.php    # Đánh giá hiệu suất
-├── includes/             # Các thành phần và tiện ích dùng chung
-├── css/                  # Tệp định dạng
-├── ajax/                 # Xử lý yêu cầu AJAX
-└── images/               # Hình ảnh và tài sản hệ thống
-Apply to index.php
-Cấu trúc Cơ sở dữ liệu
-Hệ thống bao gồm một số bảng liên kết:
-Users - Xác thực hệ thống
-Employee - Thông tin nhân viên cốt lõi
-Department - Cấu trúc tổ chức
-Recruitment - Theo dõi quy trình tuyển dụng
-Attendance/AttendanceDetail - Theo dõi giờ làm việc
-Assessment - Hồ sơ đánh giá hiệu suất
-Ngôn ngữ
-Giao diện hệ thống chủ yếu bằng tiếng Việt.
-Lưu ý về Bảo mật
-Thông tin đăng nhập quản trị viên mặc định nên được thay đổi ngay sau khi cài đặt
-Mật khẩu người dùng được lưu trữ an toàn
-Kiểm soát truy cập dựa trên vai trò giới hạn hành động của người dùng dựa trên quyền hạn
+# Employee Management System
+
+![Employee Management System](images/avatar.png)
+
+## 📋 Overview
+
+A comprehensive employee management system designed for corporate HR departments. This web-based application helps organizations manage their workforce efficiently with modules for recruitment, employee records, contracts, departments, attendance tracking, salary management, and performance assessments.
+
+## ✨ Features
+
+- **Dashboard**: Visualize employee statistics and department information
+- **Recruitment**: Manage job postings and candidate applications
+- **Employee Management**: Store and update comprehensive employee information
+- **Contract Management**: Track employment contracts and terms
+- **Department Organization**: Manage department structure and leadership
+- **Attendance Tracking**: Record and monitor employee attendance
+- **Salary Management**: Calculate and manage salary and bonus payments
+- **Performance Assessment**: Conduct and record employee evaluations
+
+## 🛠️ Technologies
+
+- **Backend**: PHP, MySQL
+- **Frontend**: HTML, CSS, JavaScript
+- **Visualization**: Chart.js
+- **Icons**: Font Awesome
+
+## 💻 Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/employee-management.git
+   ```
+
+2. Create a MySQL database and import the schema
+   ```bash
+   mysql -u username -p database_name < database.sql
+   ```
+
+3. Configure the database connection in `includes/db_connect.php`
+   ```php
+   $host = 'localhost';
+   $dbname = 'CompanyManagement';
+   $username = 'your_username';
+   $password = 'your_password';
+   ```
+
+4. Deploy the application to your web server
+
+## 🚀 Usage
+
+1. Access the application through your web browser
+2. Log in using your credentials (default admin: username `admin`, password `admin`)
+3. Navigate through the sidebar to access different modules
+
+## 🔒 Security
+
+- Password hashing for user authentication
+- Session-based authentication
+- Input validation and sanitization
+
+## 🌐 Languages
+
+- English
+- Vietnamese (Tiếng Việt)
+
+## 📊 Database Structure
+
+The system uses a relational database with tables for:
+- Users
+- Employees
+- Departments
+- Contracts
+- Attendance records
+- Salary information
+- Performance assessments
+
+## 👥 Contributors
+
+- DCH Management Team
+
+## 📝 License
+
+This project is proprietary software. Unauthorized copying, modification, distribution, or use is strictly prohibited.
